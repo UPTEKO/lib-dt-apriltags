@@ -1,3 +1,3 @@
-[submodule "apriltags"]
+[submodule "apriltag"]
 	path = apriltags
-	url = https://github.com/AprilRobotics/apriltags/
+	url = https://github.com/UPTEKO/apriltag
