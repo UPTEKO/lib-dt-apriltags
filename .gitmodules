@@ -1,3 +1,6 @@
 [submodule "apriltag"]
 	path = apriltags
 	url = https://github.com/UPTEKO/apriltag
+[submodule "apriltags"]
+	path = apriltags
+	url = https://github.com/UPTEKO/apriltag

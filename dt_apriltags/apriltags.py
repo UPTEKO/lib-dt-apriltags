@@ -297,6 +297,11 @@ class Detector(object):
             self.tag_families['tagCustom48h12'] = self.libc.tagCustom48h12_create()
             self.libc.apriltag_detector_add_family_bits(self.tag_detector_ptr,
                                                         self.tag_families['tagCustom48h12'], self.params['max_hamming'])
+        elif 'tagCustom12h6' in self.params['families']:
+            self.libc.tagCustom12h6_create.restype = ctypes.POINTER(_ApriltagFamily)
+            self.tag_families['tagCustom12h6'] = self.libc.tagCustom12h6_create()
+            self.libc.apriltag_detector_add_family_bits(self.tag_detector_ptr,
+                                                        self.tag_families['tagCustom12h6'], self.params['max_hamming'])
         elif 'tagStandard41h12' in self.params['families']:
             self.libc.tagStandard41h12_create.restype = ctypes.POINTER(_ApriltagFamily)
             self.tag_families['tagStandard41h12'] = self.libc.tagStandard41h12_create()
