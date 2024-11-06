@@ -10,6 +10,15 @@ ENV QEMU_EXECVE 1
 # copy QEMU
 COPY ./assets/qemu/${ARCH}/ /usr/bin/
 
+# Set the environment variable to avoid interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Example installation command that might require user input
+RUN apt-get update && apt-get install -y tzdata
+
+# Optionally, set the timezone to a specific value
+RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
+
 # install python and cmake
 RUN apt-get update && \
   apt-get install -y \
